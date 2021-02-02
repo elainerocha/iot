@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="None">
+  
+  
+  <link rel="shortcut icon" href="img/favicon.ico">
+  <title>IOT e Conforto Térmico</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="css/theme.css" />
+  <link rel="stylesheet" href="css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  <link href="css/extra_css.css" rel="stylesheet" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Home";
+    var mkdocs_page_input_path = "index.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="js/jquery-2.1.1.min.js" defer></script>
+  <script src="js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href="." class="icon icon-home"> IOT e Conforto Térmico</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="./search.html" method="get">
+    <input type="text" name="q" placeholder="Procurar termos" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href=".">Home</a>
+    <ul class="current">
+    </ul>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Montagem%20do%20hardware%20para%20medir%20temperatura%20e%20umidade/">Montagem</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Programa%C3%A7%C3%A3o%20da%20placa%20NodeMCU/">Programação</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Configura%C3%A7%C3%A3o%20do%20ThingSpeak%20para%20receber%20dados/">ThingSpeak</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Tratamento%20dos%20dados%20no%20Scratch%20usando%20a%20extens%C3%A3o%20Visualizador%20de%20Dados/">Scratch 3.0</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Finaliza%C3%A7%C3%A3o%20do%20projeto/">Finalização do Projeto</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Coment%C3%A1rios%20finais/">Comentários Finais</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Refer%C3%AAncias%20consultadas/">Referências</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="sobre/">Sobre</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href=".">IOT e Conforto Térmico</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Home</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="resumo">Resumo</h1>
+<p>Este tutorial descreve a criação de um projeto de IOT para medir a temperatura e umidade do ambiente em espaços de educação, buscando identificar as variações que influenciam no conforto térmico dos estudantes, tratando os dados e comunicando as informações de maneira acessível.
+O objetivo é tornar acessível a criação de projetos em IOT para alunos da educação básica, partindo de problemas reais. Para isso, foi realizada a construção de um hardware utilizando placa NodeMCU e sensor DHT22, para realizar a medição da temperatura e umidade. Os dados foram colhidos pela plataforma ThingSpeak e comunicados por meio de animação programada no Scratch. Foi também utilizada a extensão Visualizador de Dados, que possibilita a comunicação entre o ThingSpeak e o Scratch.
+Os níveis de dificuldade de cada etapa são diferenciados, permitindo a criação de projetos colaborativos com alunos de diferentes séries. Para execução do projeto, a programação do hardware necessita ser feita na IDE do Arduino, sendo este um processo possível para estudantes que estejam cursando os anos finais do ensino fundamental, ou o ensino médio. O tratamento dos dados utilizando a extensão Visualizador de Dados e o Scratch permite a participação de alunos a partir do 4º ano do ensino fundamental. 
+Para definir as zonas de conforto térmico, estabelecemos o valor de 23ºC, considerando uma variação entre 22ºC e 24ºC. Em relação a umidade relativa do ar, seguimos as recomendações da Organização Mundial de Saúde (OMS), que adotou uma escala que identifica os níveis de criticidade da umidade do ar da seguinte maneira:</p>
+<ul>
+<li>Entre 21 e 30% - Estado de Atenção</li>
+<li>Entre 12 e 20% - Estado de Alerta</li>
+<li>Abaixo de 12% - Estado de Emergência</li>
+</ul>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="Montagem%20do%20hardware%20para%20medir%20temperatura%20e%20umidade/" class="btn btn-neutral float-right" title="Montagem">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+      
+        <span style="margin-left: 15px"><a href="Montagem%20do%20hardware%20para%20medir%20temperatura%20e%20umidade/" style="color: #fcfcfc">Próximo &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '.';</script>
+    <script src="js/theme.js" defer></script>
+      <script src="search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
+
+<!--
+MkDocs version : 1.1.2
+Build Date UTC : 2021-02-02 01:11:29.378183+00:00
+-->

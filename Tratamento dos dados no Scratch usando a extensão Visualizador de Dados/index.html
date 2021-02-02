@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Scratch 3.0 - IOT e Conforto Térmico</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../css/theme.css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  <link href="../css/extra_css.css" rel="stylesheet" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Scratch 3.0";
+    var mkdocs_page_input_path = "Tratamento dos dados no Scratch usando a extens\u00e3o Visualizador de Dados.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> IOT e Conforto Térmico</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Procurar termos" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../Montagem%20do%20hardware%20para%20medir%20temperatura%20e%20umidade/">Montagem</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../Programa%C3%A7%C3%A3o%20da%20placa%20NodeMCU/">Programação</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../Configura%C3%A7%C3%A3o%20do%20ThingSpeak%20para%20receber%20dados/">ThingSpeak</a>
+                    </li>
+                </ul>
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Scratch 3.0</a>
+    <ul class="current">
+    </ul>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../Finaliza%C3%A7%C3%A3o%20do%20projeto/">Finalização do Projeto</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../Coment%C3%A1rios%20finais/">Comentários Finais</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../Refer%C3%AAncias%20consultadas/">Referências</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../sobre/">Sobre</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">IOT e Conforto Térmico</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Scratch 3.0</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="tratamento-dos-dados-no-scratch-usando-a-extensao-visualizador-de-dados"><strong>Tratamento dos dados no Scratch usando a extensão Visualizador de Dados</strong></h1>
+<p>O Scratch é uma linguagem de programação por blocos a qual permite que crianças à partir de oito anos de idade aprenda a programar e criar animações, histórias interativas, jogos, simulações dentre outros. Ele possui uma comunidade online onde os projetos são compartilhados de forma que todos os visitantes e/ou usuários possam verificar os códigos utilizados para criar qualquer um dos projetos compartilhados. Algumas extensões oficiais são disponibilizadas na comunidade online.</p>
+<p>Diversos outros desenvolvedores ao redor do mundo criam extensões diversas e disponibilizam para a comunidade em locais diversos. A extensão Visualizador de Dados, criada pela Cássia de Oliveira Fernandez e João Adriano Freitas (POLI-USP), foi disponibilizada no GitHub. Esta extensão permite que o Scratch receba dados do ThingSpeak, favorecendo assim, o tratamento dos dados por alunos que possuem poucos conhecimentos de programação. Por ser uma extensão não oficial, ela é utilizada com versões modificadas do Scratch. Aqui, utilizamos a versão disponibilizada pelo HackEduca em <a href="https://hackeduca.github.io/" rel="noopener" target="_blank">https://hackeduca.github.io/</a></p>
+<p>A extensão Visualizador de Dados adiciona no Scratch os blocos que permitem a comunicação com o ThingSpeak. Para utilizá-la, é preciso acessar a versão modificada <a href="https://hackeduca.github.io/" rel="noopener" target="_blank">(https://hackeduca.github.io/)</a> a qual abrirá uma tela de programação similar ao Scratch oficial. Em seguida, é preciso habilitar a extensão “Visualizador de Dados”, clicando no ícone localizado no canto inferior esquerdo da tela conforme demonstrado na Figura 26.
+<img alt="img" class="center" src="../img/scratch_add_extension.png" style="height:100x;width:100%" />
+<strong>Figura 26. Tela de programação do Scratch disponível em</strong> <a href="https://hackeduca.github.io" rel="noopener" target="_blank"><strong>https://hackeduca.github.io</strong></a> <strong>e localização do ícone para selecionar a extensão de Visualizador de Dados</strong></p>
+<p>Em seguida, para habilitar a extensão “Visualizador de Dados” escolha a extensão, conforme demonstrado na Figura 27.
+<img alt="img" class="center" src="../img/habilitar.png" style="height:100x;width:100%" />
+<strong>Figura 27. Selecionando a extensão Visualizador de Dados</strong></p>
+<p>A programação no Scratch consiste em arrastar blocos e encaixá-los de acordo com o projeto que deseja criar. Para compreender as programações básicas do Scratch basta acessar o site oficial: https://scratch.mit.edu/ e explorar os tutoriais disponibilizados em: <a href="https://scratch.mit.edu/projects/editor/?tutorial=all" rel="noopener" target="_blank"><strong>https://scratch.mit.edu/projects/editor/?tutorial=all.</strong></a></p>
+<p>Para programar a versão do Scratch com a extensão de Visualizador de Dados, é necessário informar o código do Canal no bloco de definição de dados para ler o ThingSpeak, conforme indicado nas Figuras 28 e 29. Verificamos anteriormente como obter esse código (ID do Canal) na Figura 23.
+<img alt="img" class="center" src="../img/bloco_chave.png" style="height:100x;width:100%" />
+<strong>Figura 28. Como unir os blocos para inserir a chave da API</strong></p>
+<p><img alt="img" class="center" src="../img/bloco_inserir_chave.png" style="height:100x;width:100%" />
+<strong>Figura 29. Local para inserir a chave da API do ThingSpeak</strong></p>
+<p>Em relação ao número do campo, no ThingSpeak vá em Channel Settings e verifique qual campo deseja obter os dados. No caso, o campo 1 (Field 1) refere-se a umidade e 2 (Field 2) refere-se aos dados relacionados a temperatura (Figura 30).
+<img alt="img" class="center" src="../img/blobo_numeracao.png" style="height:100x;width:100%" />
+<strong>Figura 30. Verificando a numeração dos campos no ThingSpeak</strong></p>
+<p>Para programar a leitura da temperatura e da umidade utilizamos os comandos demonstrados na Figura 31.
+<img alt="img" class="center" src="../img/bloco_visualizador.png" style="height:100x;width:100%" />
+<strong>Figura 31. Programação no Scratch para ler os dados no Visualizador de Dados</strong></p>
+<p>O bloco laranja claro “mude para”, com o nome temp ou umid (referentes a temperatura e umidade respectivamente), é uma variável. Para criar a variável verifique a Figura 32, após criar a variável, basta nomeá-la.
+<img alt="img" class="center" src="../img/bloco_variaveis.png" style="height:100x;width:70%" />
+<strong>Figura 32. Criando uma variável no Scratch</strong></p>
+<p>Já os blocos laranja escuro (adicione, item, apague todos) são obtidos ao criar uma lista. Para isso, basta clicar em variáveis, escolher a opção “Criar uma lista” e nomear a lista. Aqui nomeamos como “ThingSpeak_temp” e “ThingSpeak_umid”. Veja na Figura 33 os últimos valores identificados na IDE do Arduino e na Figura 34 os mesmos valores identificados na extensão de Visualizador de Dados.
+<img alt="img" class="center" src="../img/serial_monitor.png" style="height:100x;width:70%" />
+<strong>Figura 33. Valores identificados na IDE do Arduino</strong></p>
+<p><img alt="img" class="center" src="../img/bloco_lista.png" style="height:100x;width:90%" />
+<strong>Figura 34. Valores identificados na extensão de Visualizador de Dados</strong></p>
+<p>A comunicação dos dados foi realizada por meio de animação criada por uma criança de 12 anos, tendo como parâmetros a temperatura de 23 graus como sendo o conforto térmico (KOWALTOSKI, 2011) aceitando uma variação entre 22 e 23 graus, temperaturas também considerada aceitável em estudos como de Lucas e Silva (2017).</p>
+<p>Para os valores de umidade utilizamos as informações fornecidas pelo “Centro de Gerenciamento de Emergências – CGE - SP” que considera adequada entre 50% e 60%, estado de atenção entre 21 e 30%, estado de alerta entre 12 e 20% e estado de emergência abaixo de 12%</p>
+<p>Ao identificar os valores de temperatura e umidade o Scratch muda o plano de fundo da tela e aparece com trajes personalizados oferecendo as seguintes dicas e/ou alertas.  A Figura 35 mostra o exemplo de tela com temperatura de 0º e umidade relativa do ar em 59%
+<img alt="img" class="center" src="../img/0_59.png" style="height:100x;width:100%" />
+<strong>Figura 35. Temperatura de 0º e umidade relativa do ar em 59%</strong></p>
+<p>A Figura 36 mostra o exemplo de tela com temperatura de 13º e umidade relativa do ar em 70%
+<img alt="img" class="center" src="../img/13_70.png" style="height:100x;width:100%" />
+<strong>Figura 36. Temperatura de 13º e umidade relativa do ar em 70%</strong></p>
+<p>A Figura 37 mostra o exemplo de tela com temperatura de 16º e umidade relativa do ar em 45%
+<img alt="img" class="center" src="../img/16_45.png" style="height:100x;width:100%" />
+<strong>Figura 37. Temperatura de 16º e umidade relativa do ar em 45%</strong></p>
+<p>A Figura 38 mostra o exemplo de tela com temperatura de 20º e umidade relativa do ar em 30%
+<img alt="img" class="center" src="../img/20_30.png" style="height:100x;width:100%" />
+<strong>Figura 38. Temperatura de 20º e umidade relativa do ar em 30%</strong></p>
+<p>A Figura 39 mostra o exemplo de tela com temperatura de 23º e umidade relativa do ar em 60%
+<img alt="img" class="center" src="../img/23_60.png" style="height:100x;width:100%" />
+<strong>Figura 39. Temperatura de 23º e umidade relativa do ar em 60%</strong></p>
+<p>A Figura 40 mostra o exemplo de tela com temperatura de 26º e umidade relativa do ar em 20%
+<img alt="img" class="center" src="../img/26_20.png" style="height:100x;width:100%" />
+<strong>Figura 40. Temperatura de 26º e umidade relativa do ar em 20%</strong></p>
+<p>A Figura 41 mostra o exemplo de tela com temperatura de 29º e umidade relativa do ar em 12%
+<img alt="img" class="center" src="../img/29_12.png" style="height:100x;width:100%" />
+<strong>Figura 41. Temperatura de 29º e umidade relativa do ar em 12%</strong></p>
+<p>A Figura 42 mostra o exemplo de tela com temperatura de 34º e umidade relativa do ar em 12%
+<img alt="img" class="center" src="../img/34_12.png" style="height:100x;width:100%" />
+<strong>Figura 42. Temperatura de 34º e umidade relativa do ar em 12%</strong></p>
+<p>A programação realizada no Scratch para comunicar o valor da temperatura do ambiente, pode ser observada na Figura 43 a seguir:
+<img alt="img" class="center" src="../img/bloco_temp_atual.png" style="height:100x;width:90%" />
+<strong>Figura 43. Programação para comunicar a temperatura do ambiente</strong></p>
+<p>A programação para comunicar a umidade registrada no ambiente, está disponível na Figura 44.
+<img alt="img" class="center" src="../img/bloco_um_atual.png" style="height:100x;width:100%" />
+<strong>Figura 44. Programação para comunicar a umidade do ambiente</strong></p>
+<p>O programa com o código completo, incluindo os blocos para leitura dos dados no Thingspeak, a programação da temperatura e da umidade está disponível no link: <a href="https://drive.google.com/file/d/1s8cgLLSvJSX5DWEA5pESd-Sc3gnMXQXq/view?usp=sharing" rel="noopener" target="_blank">Aqui</a></p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../Finaliza%C3%A7%C3%A3o%20do%20projeto/" class="btn btn-neutral float-right" title="Finalização do Projeto">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../Configura%C3%A7%C3%A3o%20do%20ThingSpeak%20para%20receber%20dados/" class="btn btn-neutral" title="ThingSpeak"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../Configura%C3%A7%C3%A3o%20do%20ThingSpeak%20para%20receber%20dados/" style="color: #fcfcfc;">&laquo; Anterior</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../Finaliza%C3%A7%C3%A3o%20do%20projeto/" style="color: #fcfcfc">Próximo &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

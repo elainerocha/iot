@@ -1,0 +1,8 @@
+.center {
+    display: block;
+    margin: 0 auto;
+}
+.new-table {
+    border: 0px solid #e1e4e5; /* csslint allow: important */
+    border-collapse: collapse;
+ }

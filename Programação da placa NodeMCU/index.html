@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Programação - IOT e Conforto Térmico</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../css/theme.css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  <link href="../css/extra_css.css" rel="stylesheet" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Programa\u00e7\u00e3o";
+    var mkdocs_page_input_path = "Programa\u00e7\u00e3o da placa NodeMCU.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> IOT e Conforto Térmico</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Procurar termos" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../Montagem%20do%20hardware%20para%20medir%20temperatura%20e%20umidade/">Montagem</a>
+                    </li>
+                </ul>
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Programação</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#21-instalacao-do-driver-do-nodemcu">2.1. Instalação do Driver do NodeMCU</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#22-programacao-da-placa-nodemcu">2.2. Programação da placa NodeMCU</a>
+    </li>
+    </ul>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../Configura%C3%A7%C3%A3o%20do%20ThingSpeak%20para%20receber%20dados/">ThingSpeak</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../Tratamento%20dos%20dados%20no%20Scratch%20usando%20a%20extens%C3%A3o%20Visualizador%20de%20Dados/">Scratch 3.0</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../Finaliza%C3%A7%C3%A3o%20do%20projeto/">Finalização do Projeto</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../Coment%C3%A1rios%20finais/">Comentários Finais</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../Refer%C3%AAncias%20consultadas/">Referências</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../sobre/">Sobre</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">IOT e Conforto Térmico</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Programação</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="programacao-da-placa-nodemcu"><strong>Programação da placa NodeMCU</strong></h1>
+<p>Para realizar a programação e execução do projeto será necessário obter os seguintes softwares:</p>
+<ul>
+<li>Arduino IDE, disponível em: <a href="https://www.arduino.cc/en/software" rel="noopener" target="_blank">https://www.arduino.cc/en/software</a></li>
+<li>HackEduca Scratch 3.0 Mod, disponível em: <a href="https://hackeduca.github.io/" rel="noopener" target="_blank">https://hackeduca.github.io/</a></li>
+<li>Acesso ao ThingSpeak, em: <a href="https://thingspeak.com/login" rel="noopener" target="_blank">https://ThingSpeak.com/login</a><ul>
+<li>É necessário criar um cadastro no site. Caso não tenha o cadastro, clique em “Create One”.</li>
+</ul>
+</li>
+<li>Drivers para comunicação entre o NodeMCU e o computador. <ul>
+<li>Está disponível para as placas oficiais e similares nos seguintes links:<ul>
+<li><strong>Placa Oficial</strong>:    https://www.silabs.com/developers/usb-to-uart-bridge-vcp-drivers</li>
+<li><strong>Placa Similar</strong>:    https://github.com/nodemcu/nodemcu-devkit/tree/master/Drivers</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>Agora veremos o passo-a-passo para instalar e programar a placa NodeMCU. 
+No item 3.1 vamos verificar a instalação e no 3.2 como realizar a programação.</p>
+<h2 id="21-instalacao-do-driver-do-nodemcu"><strong>2.1. Instalação do Driver do NodeMCU</strong></h2>
+<p>Existe duas opções de driver, para placas oficiais e similares.
+Neste projeto utilizamos a opção oficial que compõe a placa do projeto.
+Faça o download no link: <a href="https://www.silabs.com/developers/usb-to-uart-bridge-vcp-drivers" rel="noopener" target="_blank">https://www.silabs.com/developers/usb-to-uart-bridge-vcp-drivers</a></p>
+<p>Na Figura 6 é possível verificar as opções de acordo com o sistema operacional.
+<img alt="img" class="center" src="../img/driver.png" style="height:100x;width:75%" />
+<strong>Figura 6. Opções de Driver do NodeMCU</strong><p></p></p>
+<p>Verifique o passo a passo para fazer a instalação:</p>
+<ol>
+<li>Faça o download e escolha o arquivo compatível (64bits ou 32bits)</li>
+<li>
+<p>Abra o arquivo .exe e execute a instalação, conforme demonstra a Figura 7:
+<img alt="img" class="center" src="../img/driver_install.png" style="height:100x;width:75%" />
+<strong>Figura 7. Instalação do NodeMCU</strong><p></p></p>
+</li>
+<li>
+<p>Após basta clicar em concluir.</p>
+</li>
+<li>Faça download da IDE do Arduino no seguinte endereço: <a href="https://www.arduino.cc/en/software" rel="noopener" target="_blank">https://www.arduino.cc/en/software </a></li>
+<li>
+<p>Escolha a versão Windows ZIP, a qual não precisa de instalação, somente é necessário descompactar o arquivo, conforme demonstra a Figura 8.
+<img alt="img" class="center" src="../img/arduino_ide_download.png" style="height:100x;width:90%" />
+<strong>Figura 8. Descompactar a IDE do Arduino</strong><p></p></p>
+</li>
+<li>
+<p>Escolha um local para salvar o arquivo, conforme a Figura 9
+<img alt="img" class="center" src="../img/folder_arduino_ide.png" style="height:100x;width:75%" />
+<strong>Figura 9. Salvar a IDE do Arduino</strong><p></p></p>
+</li>
+<li>
+<p>Em seguida, basta descompactar o arquivo, conforme ilustra a Figura 10.<img alt="img" class="center" src="../img/descompactar.png" style="height:100x;width:40%" />
+<strong>Figura 10. Descompactar a pasta com a IDE do Arduino</strong><p></p></p>
+</li>
+<li>
+<p>Execute o arquivo arduino.exe. Caso queira manter 100% dos desenvolvimentos e bibliotecas dentro dessa pasta, crie uma pasta chamada “portable”, para que nada seja instalado fora desse local. Veja exemplo na Figura 11:
+<img alt="img" class="center" src="../img/make_portable.png" style="height:100x;width:80%" />
+<strong>Figura 11. Executar a IDE do Arduino</strong><p></p></p>
+</li>
+<li>
+<p>A instalação das bibliotecas ou <em>library</em>, as quais são conjuntos de função pré-escritas que facilitam o trabalho quando se cria um novo programa, não sendo necessário reescrever todo o código desde o início. Para isso, selecione a opção “Incluir Biblioteca” e, logo em seguida, “Gerenciar Bibliotecas” (Figura 12).
+<img alt="img" class="center" src="../img/install_lib.png" style="height:100x;width:80%" />
+<strong>Figura 12. Instalação da biblioteca</strong><p></p></p>
+</li>
+<li>
+<p>Na opção “Gerenciar Biblioteca” Instale o “DHT sensor library” e o “ThingSpeak”, conforme Figura 13:
+<img alt="img" class="center" src="../img/dht_lib.png" style="height:100x;width:100%" />
+<img alt="img" class="center" src="../img/thingspeak_lib.png" style="height:100x;width:100%" />
+<strong>Figura 13. Instalação do “DHT sensor library” e do “ThingSpeak”,</strong><p></p></p>
+</li>
+<li>
+<p>Para instalar a placa NodeMCU ESP8266, de modo que ela fique disponível na IDE do Arduino, é necessário primeiramente habilitar o uso da placa NodeMCU com ESP8266, para isso, é preciso, indicar o endereço do repositório: <a href="https://arduino.esp8266.com/stable/package_esp8266com_index.json" rel="noopener" target="_blank">https://arduino.esp8266.com/stable/package_esp8266com_index.json </a>. </p>
+<p>Siga os passos de 1 a 4 indicado na Figura 10.
+<img alt="img" class="center" src="../img/esp8266_lib.png" style="height:100x;width:100%" />
+<strong>Figura 14. Como habilitar o uso da placa NodeMCU com ESP8266</strong><p></p></p>
+</li>
+<li>
+<p>Escolha a placa, conforme está demonstrado nas Figuras 15, 16, 17 e 18:
+    <img alt="img" class="center" src="../img/esp8266_board.png" style="height:100x;width:80%" />
+    <strong>Figura 15. Selecionando a opção de gerenciamento de placas</strong><p></p></p>
+<p><img alt="img" class="center" src="../img/esp8266_install_board.png" style="height:100x;width:80%" />
+<strong>Figura 16. Selecionar e instalar o ESP8266</strong><p></p></p>
+<p><img alt="img" class="center" src="../img/esp8266_select_board.png" style="height:100x;width:100%" />
+<strong>Figura 17. Selecionando NodeMCU</strong><p></p></p>
+<p>Para selecionar a porta, verifique qual está disponível no seu dispositivo. Isso pode variar em cada dispositivo. No exemplo da Figura 18 a porta disponível selecionado foi a COM3, mas isso varia.
+<img alt="img" class="center" src="../img/esp8266_select_port.png" style="height:100x;width:80%" />
+<strong>Figura 18. Selecionando a porta disponível</strong> <p></p></p>
+</li>
+<li>
+<p>Feche a janela após a instalação.</p>
+</li>
+</ol>
+<h2 id="22-programacao-da-placa-nodemcu"><strong>2.2. Programação da placa NodeMCU</strong></h2>
+<p>Agora veremos como criar a conexão do sensor DHT 22, conectado ao pino D2 do NodeMCU, para enviar dados ao ThingSpeak (Figura 19). É possível fazer download do arquivo no link: <a href="https://drive.google.com/file/d/1BNsfWJ0jxjunhxm7o6kPmKUclMtLalzz/view?usp=sharing" rel="noopener" target="_blank">https://drive.google.com/file/d/1BNsfWJ0jxjunhxm7o6kPmKUclMtLalzz/view?usp=sharing </a>.</p>
+<p>Para utilizá-lo basta fazer download. No Arduino clique em “Arquivo” e em “Abrir”, ao aparecer uma mensagem relatando a necessidade de criar uma pasta, basta clicar em Ok. O programa já estará aberto na sua IDE do Arduino.</p>
+<details>
+<summary>Você pode pegar o código aqui também...</summary>
+<p>
+
+
+<pre><code class="language-c++">/** Este projeto faz parte da disciplina Fundamentos de Internet das Coisas - USP
+  * Elaine Silva Rocha Sobreira
+  * Prof. Dr. Antonio Deusany de Carvalho Jr.
+  *  
+  * Possibilita a Conexão do Sensor DHT22, ligado ao Pino D2 (GPIO4), enviando dados
+  * para o ThingSpeak que são interpretados pelo Scratch 3.0, por meio da Extensão DataViewer 
+  * (https://github.com/jaafreitas/scratch-dataviewer.
+  * Utilizamos o ScratchMod (modificação do Scratch), disponibilizado pelo HackEduca (https://www.hackeduca.com.br/).
+  * 
+  * O ScratchMod pode ser acessado em https://hackeduca.github.io/  
+ **/
+
+// ---------------------------  Declaração das Bibliotecas (library) --------------------------------------//
+#include &quot;DHT.h&quot;
+#include &quot;ThingSpeak.h&quot;
+#include &lt;ESP8266WiFi.h&gt;
+
+// --------------  Declaração dos dados de acesso (ssid, senhas, canal  api -------------------------------//
+#define ssid &quot; &quot;                 // Coloque o nome da sua rede Wifi
+#define pass &quot; &quot;                 // Coloque a senha da sua rede Wifi
+#define myChannelNumber XXXXX    // Coloque o ID do seu Canal no ThingSpeak
+#define myWriteAPIKey &quot; &quot;        // Coloque a API do seu Canal no ThingSpeak
+
+// ---------------------------------  Declaração das Bibliotecas  -----------------------------------------//
+// Define o Sensor, o Pino e a inicialização
+#define DHTTYPE DHT22
+#define DHTPin D2
+DHT dht(DHTPin, DHTTYPE);
+
+// --------------  Define as variáveis para armazenamento de Umidade e Temperatura  -----------------------//
+// Define as variáveis para armazenamento de Umidade e Temperatura
+float h; // Umidade
+float t; // Temperatura
+
+// -------------------------  Cria uma instância para acesso a Web  ---------------------------------------//
+WiFiClient client;
+
+//*************//
+void setup()
+{
+  // ----------------------  Define o modo do Wif--&gt;  station mode ----------------------------------------//
+  WiFi.mode(WIFI_STA);
+  // ----------------------  Inicia processo para monitoramento serial  -----------------------------------//
+  Serial.begin(115200);
+  // -----------------------------  Inicializa o sensor DHT22  --------------------------------------------//
+  dht.begin();
+  // -----------------------------  Acessa o site ThingSpeak   --------------------------------------------//
+  ThingSpeak.begin(client);
+}
+
+//*************//
+void loop()
+{
+  // -----------------------------  Define quantos campos serão enviados ----------------------------------//
+  ThingSpeak.setField(1, h);
+  ThingSpeak.setField(2, t);
+  // --------------  Efetua a leitura de Temperatura e Umidade (guarda nas variáveis t e h)  --------------//
+  t = dht.readTemperature();
+  h = dht.readHumidity();
+
+  // -----------------------------  Inicia o acesso a rede Wifi selecionada  ------------------------------//
+  if (WiFi.status() != WL_CONNECTED) {
+    Serial.print(&quot;Tentando conectar a rede &quot;);
+    while (WiFi.status() != WL_CONNECTED) {
+      WiFi.begin(ssid, pass);  
+      Serial.print(&quot;.&quot;);
+      delay(5000);
+    }
+    Serial.println(&quot;\nConectado!!!&quot;);
+    Serial.println(ssid);
+    Serial.println(WiFi.localIP());
+  }
+
+  // ------------------------------  Envia dados ao ThingSpeak --------------------------------------------//
+  int x = ThingSpeak.writeFields(myChannelNumber, myWriteAPIKey);
+  if (x == 200)
+  {
+    Serial.println(&quot;Dados foram enviados com Sucesso.&quot;);
+  }
+  else {
+    Serial.println(&quot;Há algum problema no acesso ao Thingspeak: Erro #: &quot; + String(x));
+  }
+
+  // ---------------------  Mostra dados na tela de monitoramento Serial ----------------------------------//
+  Serial.print(&quot;Temperatura atual é : &quot;);
+  Serial.println(t);
+  Serial.print(&quot;A umidade atual é : &quot;);
+  Serial.println(h);
+  Serial.println(&quot;&quot;);
+
+  // -------------  Aguarda 20 segundos antes de enviar um novo dado para o ThingSpeak  ---------------------//
+  delay(20000);
+}
+// ---------------------------------------------  FIM  ----------------------------------------------------//
+
+</code></pre>
+
+</p>
+</details>
+<p></p>
+
+<p>Carregando no Arduino, essa será a imagem:
+<img alt="img" class="center" src="../img/programa%C3%A7%C3%A3o_arduino.jpg" style="height:100x;width:100%" />
+<strong>Figura 19. Programação da placa NodeMCU</strong><p></p></p>
+<p>Na programação temos comentários com as orientações necessárias para a declaração dos dados de acesso. No código compartilhado, conforme a figura 20 ilustra, nas linhas <strong>1</strong> e <strong>2</strong> é necessário incluir as informações necessárias para acessar a internet e, nas linhas <strong>3</strong> e <strong>4</strong>, as informações para envio de dados para o ThingSpeak.
+<img alt="img" class="center" src="../img/dados_acesso.png" style="height:100x;width:100%" />
+<strong>Figura 20. Declaração das variáveis para acesso à internet e envio de dados</strong><p></p></p>
+<p>Antes do carregamento do código é necessário informar nos espaços indicados:
+*   Nome da Rede Wifi
+*   Senha da Rede Wifi
+*   ID do Canal no ThingSpeak
+*   Chave de Gravação do Canal do ThingSpeak</p>
+<p>Para obter as duas últimas informações necessárias, siga os passos apresentados na próxima sessão:</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../Configura%C3%A7%C3%A3o%20do%20ThingSpeak%20para%20receber%20dados/" class="btn btn-neutral float-right" title="ThingSpeak">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../Montagem%20do%20hardware%20para%20medir%20temperatura%20e%20umidade/" class="btn btn-neutral" title="Montagem"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../Montagem%20do%20hardware%20para%20medir%20temperatura%20e%20umidade/" style="color: #fcfcfc;">&laquo; Anterior</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../Configura%C3%A7%C3%A3o%20do%20ThingSpeak%20para%20receber%20dados/" style="color: #fcfcfc">Próximo &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
